@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>******* DTL Start **********</h2>
+    {{a|lower}}<br>
+    {{b|length}}<br>
+    {{c|capfirst}}<br>
+    {{but|truncatechars:5}}<br>
+    {{test|truncatechars_html:3|upper}}<br>
+    {{t|default:'not found'}}<br>
+    {{b|slice:2}}<br>
+    {{dt|date:'DATE_FORMAT'}}<br>
+    {{dt|time:'TIME_FORMAT'}}<br>
+    Number {{no}}<br>
+    floatformat {{no|floatformat}}<br>
+    floatformat:5 {{no|floatformat:5}}<br>
+    floatformat:0 {{no|floatformat:0}}<br>
+    floatformat:-5 {{no|floatformat:-5}}<br>
+<h2>******* DTL End **********</h2>
+
+<h2>******* DOT Lookup **********</h2>
+{% comment %} {{dc.names.name1}}<br> {% endcomment %}
+{{dc}}<br>
+{% for k,v in dc.items %}
+{{k}}: {{v}}<br>
+{% for i,j in v.items %}
+{{i}}: {{j}}<br>
+{% endfor %}
+{% comment %} {{k}}
+{% for i,j in k.items %}
+{{i}}: {{j}}<br>
+{% endfor %} {% endcomment %}
+{% endfor %}
+</body>
+</html>
