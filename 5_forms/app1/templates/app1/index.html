@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .helptext{
+        color:red
+    }
+    </style>
+</head>
+
+<body>
+    {% comment %} <form action="" method="get">
+        <table>
+            {{sf}}
+        </table>
+        <input type="submit" value="Submit">
+    </form> {% endcomment %}
+
+    {% comment %} <form action="" method="get"> {% endcomment %}
+    {% comment %} {{ sf.as_p }} {% endcomment %}
+    {% comment %} {{ sf.as_table }} {% endcomment %}
+    {% comment %} {{ sf.as_ul }} {% endcomment %}
+    {% comment %} <label for="name">Name:</label>
+    {{ sf.name }}
+    <input type="submit" value="Submit"> {% endcomment %}
+    {% comment %} </form> {% endcomment %}
+
+
+    {% comment %} <form action="" method="get">
+    <div>
+    <label for="id_name">Name:</label>
+    <input type="text" name="name" required id="id_name">
+    </div>
+    <div>
+    <label for='{{sf.name.id_for_label}}'>Name:</label>
+    {{sf.name}}
+    </div>
+    <div>
+    {{sf.name.label_tag}}
+    {{sf.name}}
+    </div>
+    <div>
+    {{sf.name.label}}<br>
+    {{sf.name.value}}<br>
+    {{sf.name.html_name}}<br>
+    {{sf.name.help_text}}<br>
+    {{sf.name.field.required}}
+    </div>
+    
+    </form> {% endcomment %}
+
+    {% comment %} <form action="" method="get">
+    <div> {% endcomment %}
+    {% comment %} {% for field in sf %}
+    {{field.label_tag}}
+    {{field}}<br>
+    {% endfor %} {% endcomment %}
+    {% comment %} {% for field in sf.visible_fields %}
+    {{field.label_tag}}
+    {{field}}<br>
+    {% endfor %}
+    {% for field in sf.hidden_fields %}
+    {{field}}<br>
+    {% endfor %}
+    <input type="submit" value="Submit">
+    </div>
+    </form> {% endcomment %}
+
+
+    <form action="" method="get">
+        <div>
+            <table>
+                {{sf}}
+            </table>
+        </div>
+    </form>
+</body>
+</html>
