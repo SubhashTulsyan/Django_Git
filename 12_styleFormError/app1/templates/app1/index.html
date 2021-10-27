@@ -9,15 +9,15 @@
     <link rel="stylesheet" href='{% static 'css/test.css' %}'>
 </head>
 <body>
-<form action="" method="post">
+<form action="" method="post" novalidate>
 {% csrf_token %}
-{% comment %} <div>
+<div>
 <table>
     {{sf.non_error_fields}}
     {% for field in sf %}
     <div>
     {% for error in field.errors %}
-    <span class='er'>
+    <span class='errorlist'>
     {{error}}
     </span>
     {% endfor %}
@@ -26,10 +26,10 @@
     {% endfor %}
 </table>
 <input type="submit" value="Submit">
-</div> {% endcomment %}
-<table>{{sf}}</table>
+</div>
+{% comment %} <table>{{sf}}</table>
 
-<input type="submit" value="Submit">
+<input type="submit" value="Submit"> {% endcomment %}
 </form>
 </body>
 </html>
