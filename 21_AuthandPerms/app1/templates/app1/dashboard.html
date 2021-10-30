@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h1>{{user}}</h1><br>
+        {% if perms.app1.change_blog %}    
+            <input type="button" value="Change Blog"><br>
+        {% else %}
+            Change Permission denied
+        {% endif %}
+        {% if perms.app1.view_blog %}
+            <input type="button" value="View Blog">
+        {% else %}
+            Add Permission Denied
+        {% endif %}
+        {% if perms.app1.delete_blog %}
+            <input type="button" value="Delete Blog">
+        {% else %}
+            Delete Permission Denied
+        {% endif %}
+        <a href="{% url 'logout' %}">Logout</a>
+    </form>
+
+</body>
+
+</html>
