@@ -1,0 +1,46 @@
+--Session--
+
+1. Using database-backed sessions
+
+2. Using cached sessions (For better Performance)
+    You should only use cache-based sessions if you’re using the Memcached cache backend.
+
+SESSION_ENGINE
+    Default: 'django.contrib.sessions.backends.db'
+    'django.contrib.sessions.backends.file'
+    'django.contrib.sessions.backends.cache'
+    'django.contrib.sessions.backends.cached_db'
+    'django.contrib.sessions.backends.signed_cookies'
+
+SESSION_SERIALIZER
+    Default: 'django.contrib.sessions.serializers.JSONSerializer'
+    'django.contrib.sessions.serializers.PickleSerializer'
+
+3. Using file-based sessions
+
+4. Using cookie-based sessions
+
+
+-- Cache --
+
+CACHES = {
+    'default': {
+        'BACKEND': 'path.to.backend',
+    }
+}
+'django.core.cache.backends.memcached.PyMemcacheCache'
+'django.core.cache.backends.db.DatabaseCache'
+'django.core.cache.backends.filebased.FileBasedCache'
+'django.core.cache.backends.locmem.LocMemCache'
+'django.core.cache.backends.dummy.DummyCache'
+'path.to.backend' #Custom backend path
+
+-- Signals --
+
+save()
+
+
+
+
+
+
