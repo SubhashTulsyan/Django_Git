@@ -1,0 +1,12 @@
+from django.db import models
+# Create your models here.
+class Student(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    name = models.CharField(max_length=80)
+    roll = models.IntegerField(unique=True, blank=False)
+    pass_date = models.DateField()
+    created_datetime = models.DateTimeField(null=True)
+class Teacher(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    name = models.CharField(max_length=80)
+    roll = models.IntegerField(unique=True, blank=False)
