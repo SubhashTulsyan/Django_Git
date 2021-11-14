@@ -1,0 +1,51 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-4 offset-1">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h1 class="text-center alert alert-info">Add & Show</h1>
+            <table>
+                {{uf}}
+            </table>
+            <input type="submit" class='btn btn-success' value="Submit">
+        </form>
+    </div>
+    <div class="col-sm-6">
+        <h1 class="text-center alert alert-info">Existing users</h1>
+        {% if users %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Roll</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <th scope="row">{{user.id}}</th>
+                    <td>{{user.name}}</td>
+                    <td>{{user.roll}}</td>
+                    <td>{{user.password}}</td>
+                    <td>
+                    <a href="{% url 'update' user.id %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'delete' user.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% else %}
+        <h1 class="text-center alert alert-warning">User Not Found</h1>
+        {% endif %}
+
+    </div>
+</div>
+
+
+{% endblock content %}

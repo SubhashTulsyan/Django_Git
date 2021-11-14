@@ -33,7 +33,7 @@ def home(request):
     # same for week, week_day(day 1 sunday), quarter(start from Jan), 
     # time, hour, min, second, isnull, regex, iregex
     #student = Student.objects.filter(name__contains = 'BB')
-    #student = Student.objects.filter(id__in = [1,2,4,6])
+    student = Student.objects.filter(id__in = [1,2,4,6])
     
 
 

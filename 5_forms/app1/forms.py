@@ -10,7 +10,8 @@ class studentform(forms.Form):
     
     name = forms.CharField(max_length=80, initial='Sohan', help_text='Please Enter')
     roll = forms.IntegerField()
-    branch = forms.ChoiceField(choices=branches)
+    #branch = forms.ChoiceField(choices=branches)
+    branch = forms.CharField()
     email = forms.EmailField(
         required=True,
         label='EMAIL',

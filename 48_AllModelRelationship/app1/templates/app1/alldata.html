@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% if pagedata %}
+<h2>Page Data</h2>
+  <table class="page" border="1">
+    <th>User</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Published Date</th>
+    {% for pd in pagedata %}
+    <tr class="pagerow">
+        <td>{{pd.user}}</td>
+        <td>{{pd.name}}</td>
+        <td>{{pd.category}}</td>
+        <td>{{pd.publishDate}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+{% if postdata %}
+<h2>Post Data</h2>
+  <table class="post" border="1">
+    <th>User</th>
+    <th>Title</th>
+    <th>Category</th>
+    <th>Published Date</th>
+    {% for psd in postdata %}
+    <tr class="postrow">
+        <td>{{psd.user}}</td>
+        <td>{{psd.title}}</td>
+        <td>{{psd.category}}</td>
+        <td>{{psd.publishDate}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+{% if songdata %}
+<h2>Song Data</h2>
+  <table class="song" border="1">
+    <th>Singer</th>
+    <th>Name</th>
+    <th>Duration</th>
+    {% for sd in songdata %}
+    <tr class="songrow">
+        <td>{{sd.sung_by}}</td>
+        <td>{{sd.name}}</td>
+        <td>{{sd.duration}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+  <h2>{{t}}</h2>
+
+
+</body>
+</html>
