@@ -59,30 +59,35 @@ from functools import reduce
 
 
 
-def deco_add(func):
-    def inner():
-        func()
-        print('in deco')
-    return inner
+# def deco_add(func):
+#     def inner():
+#         func()
+#         print('in deco')
+#     return inner
 
-@deco_add #2
-def add():
-    print('add')
-# 1
-# z = add
-# a = deco_add(z)
-# a()
-add()
+# @deco_add #2
+# def add():
+#     print('add')
+# # 1
+# # z = add
+# # a = deco_add(z)
+# # a()
+# add()
 
 
-l = [1,2,3,4]
+# l = [1,2,3,4]
 
-r = map(lambda x: x+1, l)
-s = filter(lambda x: x%2==0, l)
-t = reduce(lambda x,y: x*y, l)
-# for i in r:
-#     print(i)
-# for i in s:
-#     print(i)
+# r = map(lambda x: x+1, l)
+# s = filter(lambda x: x%2==0, l)
+# t = reduce(lambda x,y: x*y, l)
+# # for i in r:
+# #     print(i)
+# # for i in s:
+# #     print(i)
 
-print(t)
+# print(t)
+
+
+from test1 import sm
+
+sm()
