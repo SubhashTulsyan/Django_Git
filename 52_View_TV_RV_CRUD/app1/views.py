@@ -22,7 +22,7 @@ class AddShow(TemplateView):
         context['uf'] = uf
         context['users'] = users
         return context
-
+        
     def post(self, request):
         uf = UserForm(request.POST)
         if uf.is_valid():

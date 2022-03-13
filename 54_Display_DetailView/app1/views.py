@@ -1,6 +1,7 @@
-from django.views.generic.detail import DetailView 
-from django.views.generic.list import ListView 
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 from .models import Student
+
 # Create your views here.
 class Home(DetailView):
     model = Student
@@ -11,11 +12,10 @@ class Home(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         students = self.model.objects.all()
+        print("context keys: ", context)
         context["studentlist"] = students
         return context
-    
+
 
 class HomeList(ListView):
     model = Student
-    
-    

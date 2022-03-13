@@ -5,32 +5,33 @@ from django import forms
 from .forms import StudentForm
 from .models import Student
 
+
 class Thankyou(TemplateView):
-    template_name = 'app1/ty.html'
+    template_name = "app1/ty.html"
+
 
 class StundentDetail(DetailView):
     model = Student
 
+
 class StudentView(CreateView):
-    #success_url = '/ty/' # or define get_absolute_url in Model
-    
-    #Model
-    #fields = '__all__'
-    #model = Student
-    # def get_form(self):
-    #     form = super().get_form()
-    #     form.fields['name'].widget = forms.TextInput(attrs={'class': 'myclass'})
-    #     form.fields['roll'].widget = forms.NumberInput(attrs={'class': 'myclass'})
-    #     form.fields['doj'].widget = forms.DateInput(attrs={'class': 'myclass'})
-    #     return form
+    # success_url = '/ty/' # or define get_absolute_url in Model
 
-    #Form
+    # Model
+    # fields = '__all__'
+    # model = Student
+    def get_form(self):
+        form = super().get_form()
+        # form.fields['name'].widget = forms.TextInput(attrs={'class': 'myclass'})
+        # form.fields['roll'].widget = forms.NumberInput(attrs={'class': 'myclass'})
+        form.fields["doj"].widget = forms.DateInput(
+            attrs={"class": "myclass", "type": "date"}
+        )
+        return form
+
+    # Form
     form_class = StudentForm
-    template_name = 'app1/student_form.html'
-
-    
-
-    
+    template_name = "app1/student_form.html"
 
     # template_name = None
     # template_engine = None
@@ -46,7 +47,7 @@ class StudentView(CreateView):
 
     # initial = {}
     # form_class = None
-    
+
     # prefix = None
 
     # extra_context = None

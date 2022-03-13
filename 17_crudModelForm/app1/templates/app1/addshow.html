@@ -17,6 +17,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th scope="col">Sr No.</th>
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Roll</th>
@@ -27,7 +28,8 @@
             <tbody>
                 {% for user in users %}
                 <tr>
-                    <th scope="row">{{user.id}}</th>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{user.id}}</td>
                     <td>{{user.name}}</td>
                     <td>{{user.roll}}</td>
                     <td>{{user.password}}</td>

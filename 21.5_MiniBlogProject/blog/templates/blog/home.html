@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="col-sm-8 offset-sm-2">
+      <h3 class="text-white display-6">Home Page</h3>
+      {% if posts %}
+          {% for post in posts %}
+            <div class="jumbotron jumbotron-fluid jumbo-color">
+              <div class="container">
+                <h1 class="display-4"><b>{{post.title}}</b></h1>
+                <p class="lead">{{post.desc}}</p>
+                <a href="{{post.files.url}}"><p class="lead">{{post.files}}</p></a>
+                <a href="{{post.images.url}}"><p class="lead">{{post.images}}</p></a>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="container">
+            <h1 class="display-4 text-danger"><b>No Data Found</b></h1>
+          </div>
+        {% endif %}
+  </div>
+</div>
+{% endblock content %}
